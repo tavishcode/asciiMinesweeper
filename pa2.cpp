@@ -1,20 +1,3 @@
-/*
- * pa2.cpp
- *
- *  Created on: Mar 24, 2016
- *      Author: Tavish
- */
-/*
-* COMP2011 (Spring 2016) Assignment 2: Designing the game of Minesweeper
-*
-* Student name: GOBINDRAM, TAVISH
-* Student ID: 20317576
-* Student email: tgobindram@connect.ust.hk
-*
-* Be reminded that you are only allowed to modify a certain part of this file. Read the assignment description and
- requirement carefully.
-*/
-
 #include <iostream>
 #include <fstream>
 
@@ -27,8 +10,6 @@ const char MINE='X';
 const char SAFE='@';
 const char UNKNOWN='*';
 const char WALL='W';
-
-/* Given Functions */
 
 //The function to print current mine_map in command line
 void print_map(char map[HEIGHT][WIDTH])
@@ -53,7 +34,7 @@ void print_map(char map[HEIGHT][WIDTH])
    cout << " |012345678901234" << endl;
 }
 
-//main helper function; useless for tasks
+//main helper function
 bool all_open(const char mine_map[HEIGHT][WIDTH])
 {
    for (int i = 0; i < HEIGHT; i++)
@@ -63,7 +44,7 @@ bool all_open(const char mine_map[HEIGHT][WIDTH])
 
    return true;
 }
-//main helper function; useless for tasks; Load input file
+//main helper function; Load input file
 bool load_mine_map(char mine_map[HEIGHT][WIDTH], int coin_map[HEIGHT][WIDTH],
                    int& initial_i, int& initial_j, const char file_name[])
 {
@@ -86,13 +67,6 @@ bool load_mine_map(char mine_map[HEIGHT][WIDTH], int coin_map[HEIGHT][WIDTH],
    return true;
 }
 
-/* Your Tasks */
-/*
- Task 1: You are required to implement this function by recursively using this function to complete task 1
- Parameters:
-   mine_map: 2D char array to represent the current mine map
-   row, col: The place swept now.In main function, this place is specified by input file or users.
-*/
 void sweep_fill_along_line(char mine_map[HEIGHT][WIDTH], int row, int col)
 {
    //TODO: Add your code here
@@ -122,12 +96,7 @@ void sweep_fill_along_line(char mine_map[HEIGHT][WIDTH], int row, int col)
 	sweep_fill_along_line(mine_map,row,col-1); //checks left side for mines
 	sweep_fill_along_line(mine_map,row,col+1); //checks right side for mines
 }
-/*
- Task 2: You are required to implement this function by recursively using this function to complete task 2
- Parameters:
-   mine_map: 2D char array to represent the current mine map
-   row, col: The place swept now.In main function, this place is specified by input file or users.
-*/
+
 void sweep_fill(char mine_map[HEIGHT][WIDTH], int row, int col)
 {
    //TODO: Add your code here
@@ -163,14 +132,6 @@ void sweep_fill(char mine_map[HEIGHT][WIDTH], int row, int col)
 	sweep_fill(mine_map,row+1,col+1); //bottom-right check
 }
 
-/*
- Task 3: You are required to implement this function by recursively using this function to complete task 3.
- You are not allowed to call the function sweep_fill and results in task 2.
- Paramters:
-   mine_map: 2D char array to represent the current mine map
-   coin_map: 2D int array to record the number of coins in each block
-   row, col: The place swept now.In main function, this place is specified by input file or users.
-*/
 int sweep_fill_collect_coin(char mine_map[HEIGHT][WIDTH], const int coin_map[HEIGHT][WIDTH], int row, int col)
 {
    //TODO: Add your code here
