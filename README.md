@@ -2,6 +2,8 @@
 
 ###A minesweeper clone using an ascii interface, developed using C++
 
+Developed for a course assignment on recursion
+
 **How to play**
 * Clone the repository
 * Pick one of four different text files for different maps
