@@ -1,6 +1,6 @@
-#ASCII Minesweeper
+# ASCII Minesweeper
 
-###A minesweeper clone using an ascii interface, developed using C++
+### A minesweeper clone using an ascii interface, developed using C++
 
 Developed for a course assignment on recursion
 
